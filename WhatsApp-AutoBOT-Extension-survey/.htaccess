@@ -1,0 +1,16 @@
+RewriteEngine On
+
+# Forward extension auth pages to the PHP backend public folder.
+RewriteRule ^account/login/?$ backend-php/public/account-login.php [QSA,L]
+RewriteRule ^account/?$ backend-php/public/account-login.php [QSA,L]
+RewriteRule ^account-login\.php$ backend-php/public/account-login.php [QSA,L]
+RewriteRule ^admin\.php$ backend-php/public/admin.php [QSA,L]
+
+# Forward API routes to the backend front controller.
+RewriteRule ^api/?$ backend-php/public/index.php [QSA,L]
+RewriteRule ^api/(.*)$ backend-php/public/index.php [QSA,L]
+
+# Keep static extension assets served as-is.
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]

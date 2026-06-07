@@ -1,0 +1,15 @@
+RewriteEngine On
+
+# Account pages used by extension auth flow.
+RewriteRule ^account/login/?$ account-login.php [QSA,L]
+RewriteRule ^account/register/?$ account-register.php [QSA,L]
+RewriteRule ^account/subscription/?$ account-subscription.php [QSA,L]
+RewriteRule ^account/?$ account.php [QSA,L]
+
+# Serve existing files/directories directly.
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Route all API requests through the front controller.
+RewriteRule ^ index.php [QSA,L]

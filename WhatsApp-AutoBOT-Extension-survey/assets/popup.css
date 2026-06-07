@@ -1,0 +1,183 @@
+/* ============================================
+   Mr CRM Popup — Light & Dark Theme
+   ============================================ */
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./fonts/Poppins-700.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./fonts/Poppins-800.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Background */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --bg-card: #f8f9fa;
+  --bg-hover: #e8e8e8;
+
+  /* Text */
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --text-muted: #999999;
+  --text-very-muted: #adb5bd;
+
+  /* Borders */
+  --border-primary: #e9ecef;
+  --border-light: #dddddd;
+  --border-lighter: #eeeeee;
+
+  /* Toggle */
+  --toggle-off-bg: #cccccc;
+  --toggle-knob: #ffffff;
+
+  /* Toggle ON (reply to everyone) */
+  --toggle-on-bg: #e8f5e9;
+  --toggle-on-border: #a5d6a7;
+  --toggle-on-text: #2e7d32;
+
+  /* Toggle OFF (campaigns only) */
+  --toggle-off-card-bg: #fff8e1;
+  --toggle-off-card-border: #ffe082;
+  --toggle-off-text: #f57c00;
+
+  /* Warning */
+  --warning-bg: #fff3cd;
+  --warning-border: #ffc107;
+  --warning-text: #856404;
+
+  /* Danger / Logout hover */
+  --danger-hover-bg: #fee2e2;
+  --danger-text: #dc3545;
+
+  /* Button outlines */
+  --btn-outline-bg: #ffffff;
+
+  /* Shadows */
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+/* ============================================
+   DARK MODE
+   ============================================ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Background */
+    --bg-primary: #1a1a2e;
+    --bg-secondary: #2a2a3e;
+    --bg-card: #252540;
+    --bg-hover: #353550;
+
+    /* Text */
+    --text-primary: #e8e8f0;
+    --text-secondary: #a0a0b8;
+    --text-muted: #7a7a90;
+    --text-very-muted: #5a5a70;
+
+    /* Borders */
+    --border-primary: #3a3a50;
+    --border-light: #3a3a50;
+    --border-lighter: #2e2e44;
+
+    /* Toggle */
+    --toggle-off-bg: #4a4a60;
+    --toggle-knob: #ffffff;
+
+    /* Toggle ON */
+    --toggle-on-bg: #1a3a2a;
+    --toggle-on-border: #2a5a3a;
+    --toggle-on-text: #5cdb7e;
+
+    /* Toggle OFF */
+    --toggle-off-card-bg: #3a3020;
+    --toggle-off-card-border: #5a4a20;
+    --toggle-off-text: #ffb74d;
+
+    /* Warning */
+    --warning-bg: #3a3020;
+    --warning-border: #5a4a20;
+    --warning-text: #ffd54f;
+
+    /* Danger */
+    --danger-hover-bg: #3a2020;
+    --danger-text: #ff6b6b;
+
+    /* Button outlines */
+    --btn-outline-bg: #252540;
+
+    /* Shadows */
+    --shadow-card: 0 1px 3px rgba(0,0,0,0.3);
+  }
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 360px;
+  min-height: 400px;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  font-weight: 700;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+/* Language select — compact EN/RU/AZ */
+.popup-lang-select {
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position: right 4px center;
+  padding-right: 22px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+}
+.popup-lang-select:hover {
+  border-color: var(--border-light);
+  background-color: var(--bg-hover);
+}
+.popup-lang-select:focus {
+  outline: none;
+  border-color: #20B2AA;
+  box-shadow: 0 0 0 2px rgba(32, 178, 170, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+  .popup-lang-select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23a0a0b8' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  }
+}
+
+/* Scrollbar for dark mode */
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--bg-hover);
+    border-radius: 3px;
+  }
+}
